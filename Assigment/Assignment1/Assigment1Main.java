@@ -15,6 +15,10 @@ public class Assigment1Main{
         Number_Mate nm = new Number_Mate(name,life_point);
         System.out.println("Pemain: "+nm.getName());
         System.out.println("Life Point: "+nm.getLife_point());
+        System.out.print("Masukan jumlah bilik: ");
+        Integer bilik = Integer.parseInt(input.nextLine());
+        nm.PlayTheGame(bilik);
+
 
 
     }

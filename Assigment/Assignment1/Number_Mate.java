@@ -34,7 +34,22 @@ public class Number_Mate {
 
 //    TODO
 
-    public static void PlayTheGame(){
+    public static void PlayTheGame(int x){
+        int [][] bilik = new int[x][x];
+        System.out.print("Bilik A");
+        System.out.print("\t"+"\t");
+        System.out.println("Bilik B");
+        for(int i=0;i<x;i++){
+            for(int j=0;j<x;j++){
+                System.out.print("* ");
+            }
+            System.out.print("\t"+"\t");
+
+            for(int j=0;j<x;j++){
+                System.out.print("* ");
+            }
+            System.out.println(" ");
+        }
 
     }
 
