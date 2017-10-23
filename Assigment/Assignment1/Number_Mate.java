@@ -52,5 +52,4 @@ public class Number_Mate {
         }
 
     }
-
 }
