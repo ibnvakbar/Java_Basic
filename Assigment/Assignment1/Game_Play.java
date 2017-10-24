@@ -1,5 +1,6 @@
 package Assignment1;
 
+import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -25,15 +26,14 @@ public class Game_Play {
         int life_point = p.getLP();
         int score = p.getScore();
 
-        while(life_point>=0){
+        while(life_point>0){
             System.out.println("Pemain: "+p.getName());
             System.out.println("Life Point: "+life_point);
 
             System.out.println("BILIK A");
-            A.display(temp_arrayA);
-//            System.out.print("\t");
+            Bilik.display(temp_arrayA);
             System.out.println("BILIK B");
-            B.display(temp_arrayB);
+            Bilik.display(temp_arrayB);
 
 //        TEBAK BILIK
             System.out.print("Tebak Bilik: ");
@@ -41,40 +41,28 @@ public class Game_Play {
             String[] tebak = tebakan.split(" ");
             String[] tebakanA = tebak[0].split(",");
             String[] tebakanB = tebak[1].split(",");
-            Integer H_A = Integer.parseInt(tebakanA[0]);
-            Integer V_A = Integer.parseInt(tebakanA[1]);
-            Integer H_B = Integer.parseInt(tebakanB[0]);
-            Integer V_B = Integer.parseInt(tebakanB[1]);
+            Integer horizontalA = Integer.parseInt(tebakanA[0]);
+            Integer verticalA = Integer.parseInt(tebakanA[1]);
+            Integer horizontalB = Integer.parseInt(tebakanB[0]);
+            Integer verticalB = Integer.parseInt(tebakanB[1]);
 
-            String resultA = A.CheckBilik(H_A,V_A);
-            System.out.println(resultA);
-            String resultB = B.CheckBilik(H_B,V_B);
-            System.out.println(resultB);
-//            if(resultA.equals(resultB)){
-//                System.out.println("True");
-//            }else{
-//                System.out.println("False");
-//            }
+            String resultA = A.CheckBilik(horizontalA,verticalA);
+            String resultB = B.CheckBilik(horizontalB,verticalB);
 
             if(resultA.equals(resultB)){
-//                String resultA = A.CheckBilik(H_A,V_A);
-//                System.out.println(resultA);
-//                String resultB = B.CheckBilik(H_B,V_B);
-//                System.out.println(resultB);
-                A.SetBilik(H_A,V_A,resultA);
-                B.SetBilik(H_B,V_B,resultB);
+                A.SetBilik(horizontalA,verticalA,resultA);
+                B.SetBilik(horizontalB,verticalB,resultB);
 //                A.display(temp_arrayA);
 //                B.display(temp_arrayB);
                 life_point+=5;
                 score+=10;
-            }else if (A.CheckBilik(H_A,V_A)!=B.CheckBilik(H_B,V_B)){
-//            String resultA = A.CheckBilik(1,2);
-//            System.out.println(resultA);
-//            String resultB = B.CheckBilik(2,2);
-//            System.out.println(resultB);
-//            A.SetBilik(1,2,resultA);
+            }else if (A.CheckBilik(horizontalA,verticalA)!=B.CheckBilik(horizontalB,verticalB)){
                 life_point-=5;
-                score-=5;
+                if(score < 0){
+                    score = 0;
+                }else{
+                    score-=5;
+                }
               System.out.println("Not Match");
             }
         }
