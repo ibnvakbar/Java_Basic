@@ -1,7 +1,9 @@
 package Assignment1;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,7 +20,7 @@ public class Game_Play {
 
     public static void Play() {
         Scanner input = new Scanner(System.in);
-        Player p = new Player(Name, 10, 0);
+        Player p = new Player(Name,20, 0);
         Bilik A = new Bilik(JmlBilik);
         String[][] temp_arrayA = A.GetBilik();
         Bilik B = new Bilik(JmlBilik);
@@ -26,7 +28,7 @@ public class Game_Play {
         int life_point = p.getLP();
         int score = p.getScore();
 
-        while(life_point>0){
+        while(life_point >= 0 || checkWin(temp_arrayA,temp_arrayB)==false){
             System.out.println("Pemain: "+p.getName());
             System.out.println("Life Point: "+life_point);
 
@@ -35,7 +37,6 @@ public class Game_Play {
             System.out.println("BILIK B");
             Bilik.display(temp_arrayB);
 
-//        TEBAK BILIK
             System.out.print("Tebak Bilik: ");
             String tebakan =input.nextLine();
             String[] tebak = tebakan.split(" ");
@@ -52,13 +53,11 @@ public class Game_Play {
             if(resultA.equals(resultB)){
                 A.SetBilik(horizontalA,verticalA,resultA);
                 B.SetBilik(horizontalB,verticalB,resultB);
-//                A.display(temp_arrayA);
-//                B.display(temp_arrayB);
                 life_point+=5;
                 score+=10;
-            }else if (A.CheckBilik(horizontalA,verticalA)!=B.CheckBilik(horizontalB,verticalB)){
+            }else if (!resultA.equals(resultB)){
                 life_point-=5;
-                if(score < 0){
+                if(score <= 0){
                     score = 0;
                 }else{
                     score-=5;
@@ -69,5 +68,19 @@ public class Game_Play {
 
         System.out.println("Score :"+score);
         System.out.println("LP :"+life_point);
+    }
+
+    public static boolean checkWin(String[][] arrA, String[][] arrB){
+        List<String> l_a = new ArrayList<String>();
+        List<String> l_b = new ArrayList<String>();
+        for(int i=0;i<JmlBilik;i++){
+            l_a = Arrays.asList(Arrays.asList(arrA).get(i));
+            l_b = Arrays.asList(Arrays.asList(arrB).get(i));
+        }
+        if(!l_a.contains("* ") && !l_b.contains("* ")){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
