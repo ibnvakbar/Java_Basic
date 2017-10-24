@@ -28,7 +28,7 @@ public class Game_Play {
         int life_point = p.getLP();
         int score = p.getScore();
 
-        while(life_point >= 0 || checkWin(temp_arrayA,temp_arrayB)==false){
+        while(life_point > 0){
             System.out.println("Pemain: "+p.getName());
             System.out.println("Life Point: "+life_point);
 
@@ -63,6 +63,10 @@ public class Game_Play {
                     score-=5;
                 }
               System.out.println("Not Match");
+            }
+
+            if(checkWin(temp_arrayA,temp_arrayB)==true){
+                break;
             }
         }
 
