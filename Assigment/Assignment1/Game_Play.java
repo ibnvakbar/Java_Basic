@@ -1,5 +1,7 @@
 package Assignment1;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +19,7 @@ public class Game_Play {
         Name = name;
         JmlBilik = jmlBilik;
     }
-
+//     TODO loop if continue to play
     public static void Play() {
         Scanner input = new Scanner(System.in);
         Player p = new Player(Name,20, 0);
