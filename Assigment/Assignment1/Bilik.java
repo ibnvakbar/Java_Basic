@@ -23,7 +23,6 @@ public class Bilik {
 
     public void SetBilik(int horizon, int vertica, String result){
         bilik_matriks[horizon-1][vertica-1]= result+" ";
-
     }
 
     public String CheckBilik(int horizon, int vertica){
@@ -37,12 +36,17 @@ public class Bilik {
         return random_bilik[horizon-1][vertica-1];
     }
 
-
-
-    public static void display(String[][] ArrayBilik){
-        for (int counter = 0; counter < ArrayBilik.length; counter++) {
-            for (int counter2 = 0; counter2 < ArrayBilik[counter].length; counter2++) {
-                System.out.print(ArrayBilik[counter][counter2]);
+    public static void display(String[][] ArrayBilikA, String[][] ArrayBilikB){
+        for (int counter = 0; counter < ArrayBilikA.length; counter++) {
+            for (int counter2 = 0; counter2 < ArrayBilikA[counter].length; counter2++) {
+                System.out.print(ArrayBilikA[counter][counter2]);
+            }
+            System.out.println(" ");
+        }
+        System.out.println("\t \t");
+        for (int counter = 0; counter < ArrayBilikB.length; counter++) {
+            for (int counter2 = 0; counter2 < ArrayBilikB[counter].length; counter2++) {
+                System.out.print(ArrayBilikB[counter][counter2]);
             }
             System.out.println(" ");
         }

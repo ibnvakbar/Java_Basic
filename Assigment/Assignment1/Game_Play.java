@@ -35,9 +35,9 @@ public class Game_Play {
             System.out.println("Life Point: "+life_point);
 
             System.out.println("BILIK A");
-            Bilik.display(temp_arrayA);
-            System.out.println("BILIK B");
-            Bilik.display(temp_arrayB);
+            Bilik.display(temp_arrayA,temp_arrayB);
+//            System.out.println("BILIK B");
+//            Bilik.display(temp_arrayB);
 
             System.out.print("Tebak Bilik: ");
             String tebakan =input.nextLine();
@@ -68,17 +68,30 @@ public class Game_Play {
             }
 
             if(checkWin(temp_arrayA,temp_arrayB)==true){
-                break;
+                Bilik.display(temp_arrayA,temp_arrayB);
+                System.out.println("Wah, lo jago ya");
+                System.out.print("Ingin bermain kembali (y/n)?");
+                String replay = input.next();
+                if(replay.equals("y")) {
+                    System.out.print("Masukan jumlah bilik: ");
+                    Scanner x = new Scanner(System.in);
+                    Integer bilik = Integer.parseInt(x.nextLine());
+                    new Game_Play(p.getName(),bilik);
+                    Play();
+                }else if(replay.equals("n")) {
+                    break;
+                }
             }
         }
-
+        System.out.println("\n Result");
         System.out.println("Score :"+score);
         System.out.println("LP :"+life_point);
+        System.out.println("Terima kasih "+p.getName()+" sudah bermain!");
     }
 
     public static boolean checkWin(String[][] arrA, String[][] arrB){
-        List<String> l_a = new ArrayList<String>();
-        List<String> l_b = new ArrayList<String>();
+        List<String> l_a = new ArrayList();
+        List<String> l_b = new ArrayList();
         for(int i=0;i<JmlBilik;i++){
             l_a = Arrays.asList(Arrays.asList(arrA).get(i));
             l_b = Arrays.asList(Arrays.asList(arrB).get(i));
