@@ -18,7 +18,6 @@ public class Matriks {
         int column2 = n-1;
         int row1= 0;
         int row2 = n-1;
-        int i = 1;
         int [][] matrix = new int[n][n];
         for(int a=1;a<=n*n;a++) {
             for (int x=column1; x<=column2; x++) {

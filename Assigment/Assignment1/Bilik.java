@@ -37,6 +37,7 @@ public class Bilik {
     }
 
     public static void display(String[][] ArrayBilikA, String[][] ArrayBilikB){
+        System.out.println("BILIK A");
         for (int counter = 0; counter < ArrayBilikA.length; counter++) {
             for (int counter2 = 0; counter2 < ArrayBilikA[counter].length; counter2++) {
                 System.out.print(ArrayBilikA[counter][counter2]);
@@ -44,6 +45,7 @@ public class Bilik {
             System.out.println(" ");
         }
         System.out.println("\t \t");
+        System.out.println("BILIK B");
         for (int counter = 0; counter < ArrayBilikB.length; counter++) {
             for (int counter2 = 0; counter2 < ArrayBilikB[counter].length; counter2++) {
                 System.out.print(ArrayBilikB[counter][counter2]);

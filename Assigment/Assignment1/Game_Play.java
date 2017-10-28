@@ -19,10 +19,10 @@ public class Game_Play {
         Name = name;
         JmlBilik = jmlBilik;
     }
-//     TODO loop if continue to play
+
     public static void Play() {
         Scanner input = new Scanner(System.in);
-        Player p = new Player(Name,20, 0);
+        Player p = new Player(Name,45, 0);
         Bilik A = new Bilik(JmlBilik);
         String[][] temp_arrayA = A.GetBilik();
         Bilik B = new Bilik(JmlBilik);
@@ -34,10 +34,7 @@ public class Game_Play {
             System.out.println("Pemain: "+p.getName());
             System.out.println("Life Point: "+life_point);
 
-            System.out.println("BILIK A");
             Bilik.display(temp_arrayA,temp_arrayB);
-//            System.out.println("BILIK B");
-//            Bilik.display(temp_arrayB);
 
             System.out.print("Tebak Bilik: ");
             String tebakan =input.nextLine();
