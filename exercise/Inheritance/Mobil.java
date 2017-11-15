@@ -3,21 +3,29 @@ package Inheritance;
 /**
  * Created by rama on 11/10/17.
  */
-public class Mobil {
-    public String kecepatan;
-    public Double hargaBaru;
-    public Double hargaBekas;
-    public String warna;
+public class Mobil  extends TokoBekas implements BarangBekas {
+    private String kecepatan;
+    private String warna;
+    private Boolean kondisi;
 
-    public Mobil(String kecepatan, Double hargaBaru, Double hargaBekas, String warna){
+    public Mobil(String kecepatan, Double hargaBaru, Double hargaBekas, String warna, Boolean kondisi){
+        super(hargaBaru,hargaBekas);
         this.kecepatan=kecepatan;
-        this.hargaBaru=hargaBaru;
-        this.hargaBekas=hargaBekas;
         this.warna=warna;
+        this.kondisi=kondisi;
     }
 
-    public Double getHargaBekas(){
+    public double getHargaBekas(){
         return this.hargaBekas;
+    }
+
+    @Override
+    public int getTahunKeluar() {
+        return 0;
+    }
+
+    public boolean getKondisi(){
+        return this.kondisi;
     }
 
 

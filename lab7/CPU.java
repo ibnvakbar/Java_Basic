@@ -3,10 +3,10 @@
  */
 public class CPU {
     private String nama;
-    private Double speed;
+    private String speed;
 
 
-    public CPU(String nama, Double speed) {
+    public CPU(String nama, String speed) {
         this.nama = nama;
         this.speed = speed;
     }
@@ -19,11 +19,11 @@ public class CPU {
         this.nama = nama;
     }
 
-    public Double getSpeed() {
+    public String getSpeed() {
         return speed;
     }
 
-    public void setSpeed(Double speed) {
+    public void setSpeed(String speed) {
         this.speed = speed;
     }
 }

@@ -4,9 +4,9 @@
 public class Barang {
     public String id;
     public String nama;
-    public Integer hargaBarang;
+    public String hargaBarang;
 
-    public Barang(String id, String nama, Integer hargaBarang) {
+    public Barang(String id, String nama, String hargaBarang) {
         this.id = id;
         this.nama = nama;
         this.hargaBarang = hargaBarang;
@@ -24,11 +24,11 @@ public class Barang {
         this.nama = nama;
     }
 
-    public Integer getHargaBarang() {
+    public String getHargaBarang() {
         return hargaBarang;
     }
 
-    public void setHargaBarang(Integer hargaBarang) {
+    public void setHargaBarang(String hargaBarang) {
         this.hargaBarang = hargaBarang;
     }
 
