@@ -12,4 +12,5 @@ public class Tumbuhan extends MakhlukHidup {
     public static String bernafas(){
         return "Bernafas dengan Oksigen";
     }
+    
 }
