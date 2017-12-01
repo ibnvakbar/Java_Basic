@@ -1,26 +1,39 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class OrangTua extends Manusia{
     private String pekerjaan;
-    private ArrayList anak;
-    public OrangTua(String nama, String tempatLahir, Integer usia, Integer tinggiBadan, Integer beratBadan, String pekerjaan, ArrayList anak) {
+    private ArrayList<Anak> kid;
+    public OrangTua(String nama, String tempatLahir, Integer usia, Integer tinggiBadan, Integer beratBadan, String pekerjaan) {
         super(nama, tempatLahir, usia, tinggiBadan, beratBadan);
         this.pekerjaan=pekerjaan;
-        this.anak=anak;
+        this.setUsia(usia);
+        kid = new ArrayList<Anak>();
 
     }
 
-    public static String kecepatan(){
+    private void setUsia(Integer usia) {
+        if(usia<25){
+            throw new ArithmeticException("Usia orang tua tidak boleh lebih kurang 25");
+        }
+    }
+
+    public String kecepatan(){
         return "Bergerak dengan kecepatan sedang";
     }
+    public  void addAnak(Anak anak) {
+        kid.add(anak);
+    }
 
-    public static String bernafas(){
+    public List<Anak> daftarAnak(){
+        return kid;
+    }
+
+    public String bernafas(){
         return "Bernafas dengan Oksigen";
     }
 
-    public static String makan(){
-        return "Makan hewan dan tumbuhan";
-    }
+
 
     public boolean cekUsia(int usia){
         if(usia>25){
@@ -28,5 +41,9 @@ public class OrangTua extends Manusia{
         }else{
             return false;
         }
+    }
+
+    public String getPekerjaan() {
+        return pekerjaan;
     }
 }

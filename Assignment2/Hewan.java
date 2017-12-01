@@ -1,10 +1,9 @@
 public class Hewan extends MakhlukHidup{
-    private String nama;
     private Integer ukuran;
     private Integer jumlahKaki;
 
     public Hewan(String nama, Integer ukuran, Integer jumlahKaki) {
-        this.nama = nama;
+        super(nama);
         this.ukuran = ukuran;
         this.jumlahKaki = jumlahKaki;
     }
@@ -17,4 +16,15 @@ public class Hewan extends MakhlukHidup{
         return "Bergerak dengan kecepatan cepat";
     }
 
+    public String getNama() {
+        return nama;
+    }
+
+    public Integer getUkuran() {
+        return ukuran;
+    }
+
+    public Integer getJumlahKaki() {
+        return jumlahKaki;
+    }
 }

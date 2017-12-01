@@ -12,8 +12,14 @@ public class Karnivora extends Hewan {
         return "Bergerak dengan kecepatan cepat";
     }
 
-    public static String makan(){
-        return "Makan hewan dan tumbuhan";
+    public static Karnivora makan(Karnivora karnivora){
+        Karnivora k = new Karnivora(karnivora.getNama(),karnivora.getUkuran(),karnivora.getJumlahKaki());
+        return k;
+    }
+
+    public static Herbivora makan(Herbivora herbivora){
+        Herbivora h = new Herbivora(herbivora.getNama(), herbivora.getUkuran(), herbivora.getJumlahKaki());
+        return h;
     }
 
 }

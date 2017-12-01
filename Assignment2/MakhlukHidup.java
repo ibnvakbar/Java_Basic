@@ -1,11 +1,11 @@
 public class MakhlukHidup{
 	public String nama;
 
-	public MakhlukHidup(){
+	public MakhlukHidup(String nama) {
 		this.nama=nama;
 	}
 
-	public String setNama(String nama){
+	public String getNama(){
 		return this.nama=nama;
 	}
 

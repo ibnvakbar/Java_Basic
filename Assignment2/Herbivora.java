@@ -12,5 +12,8 @@ public class Herbivora extends Hewan{
         return "Bergerak dengan kecepatan cepat";
     }
 
-//    public static
+    public static Tumbuhan makan(Tumbuhan tumbuhan){
+        Tumbuhan t = new Tumbuhan(tumbuhan.getNama(),tumbuhan.getTinggi(),tumbuhan.getHasBuah());
+        return t;
+    }
 }
