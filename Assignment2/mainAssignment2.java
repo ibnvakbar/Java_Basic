@@ -10,12 +10,12 @@ public class mainAssignment2 {
         ArrayList<OrangTua> listOrangTua = new ArrayList<OrangTua>();
 
 //  Add Anak
-        Anak vegeta = new Anak("Vegeta", " Namex", 23, 180, 70, "Kuliah");
+        Anak vegeta = new Anak("Vegeta", " Namex", 16, 180, 70, "SMA");
         Anak melodi = new Anak("Melodi", "Solo", 24,165,45, "S1");
         Anak gohan = new Anak("Gohan", "Namex", 18, 179, 59,"S2");
         Anak bulma = new Anak("Bulma", "Manado", 19, 186, 55, "S1");
 
-//  TODO Orang Tua
+//  Add Orang Tua
         OrangTua goku = new OrangTua("Goku","Pamekasan", 35,170,65,"Mobile Engineer");
         goku.addAnak(gohan);
         goku.addAnak(melodi);
@@ -36,9 +36,6 @@ public class mainAssignment2 {
         listTumbuhan.add(wortel);
         listTumbuhan.add(rumput);
 
-
-
-
 //  Add Hewan Karnivora
         Karnivora harimau = new Karnivora("Harimau", 2, 4);
         Karnivora ular = new Karnivora("Ular", 10, 0);
@@ -56,7 +53,7 @@ public class mainAssignment2 {
         listHerbivora.add(kambing);
 
 
-
+//  PRINT ALL
 
         for(int i=1;i<listOrangTua.size()+1;i++) {
             System.out.print(i + ". ");
@@ -75,6 +72,11 @@ public class mainAssignment2 {
                 System.out.println("      "+ counter++ +". "+anak.getNama());
                 System.out.println("         "+ anak.bernafas());
                 System.out.println("         "+ anak.kecepatan());
+                System.out.println("         Usia: "+ anak.getUsia());
+                System.out.println("         Tempat Lahir: "+ anak.getTempatLahir());
+                System.out.println("         Tinggi Badan: "+ anak.getTinggiBadan());
+                System.out.println("         Berat Badan: "+ anak.getBeratBadan());
+                System.out.println("         Pendidikan: "+ anak.getDerajatSekolah());
                 System.out.println("         Makanan: "+ anak.makan(sapi).getNama()+" dan "+anak.makan(wortel).getNama());
             }
         }
@@ -90,6 +92,7 @@ public class mainAssignment2 {
 
         }
 
+        System.out.println();
         System.out.println("Daftar Hewan Herbivora");
         for(int i=1;i<listHerbivora.size()+1;i++){
             System.out.print(i+". ");
@@ -101,6 +104,7 @@ public class mainAssignment2 {
             System.out.println("   Suka makan "+listHerbivora.get(i-1).makan(wortel).getNama());
 
         }
+        System.out.println();
         System.out.println("Daftar Hewan Karnivora");
         for(int i=1;i<listKarnivora.size()+1;i++){
             System.out.print(i+". ");

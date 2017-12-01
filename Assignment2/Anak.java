@@ -10,6 +10,10 @@ public class Anak extends Manusia {
         this.setUsia(usia);
     }
 
+    public String getDerajatSekolah() {
+        return derajatSekolah;
+    }
+
     private void setUsia(Integer usia) throws ArithmeticException {
         if(usia>25){
             throw new ArithmeticException("Usia anak tidak boleh lebih dari 25");
